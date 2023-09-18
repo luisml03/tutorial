@@ -1,0 +1,90 @@
+ps -ef | grep name_instance --   ver procesos que se estan ejecutando
+ps -ef | grep LOCAL.
+ipcs -a
+
+
+top
+
+printenv | grep ORACLE
+
+show user
+
+help index
+
+show sga
+show parameters
+
+selec sysdate from dual;
+
+comando 
+l - devuelve comando almacenado
+R - ejecuta lo almacenado
+C - sustituir
+DEL - borra una linea
+ed - permite trabajar con un editor en sqlplus
+def_editor=gedit
+
+ALTER DATABASE MOUNT;  - CAMBIAR DE NOMOUNT A MOUNT
+ALTER DATABASE OPEN;  - CAMBIAR DE NOMOUNT A open
+
+STARTUP - LEVANTAR BASE
+
+STARTUP -se puede utilizar con
+
+NO MOUNT
+MOUNT
+
+SHUTDOWM - CIERRA  LA BASE.
+
+SE PUEDE UTILIZAR CON
+
+immediate
+transaccional
+abort
+
+
+SELECT * FROM V$FIXED_TABLE; - VER VISTAS DE ADMINISTRACION
+
+COL NAME FORMAT A40
+
+set pause on
+
+select * from V$FIXED_TABLE WHERE NAME LIKE 'V$%MEMORY%';
+
+ select * from V$FIXED_TABLE where NAME LIKE 'V$%BLOCK%';
+select * from v$sgainfo;
+
+V$SESSION_BLOCKERS
+
+SELECT * FROM v$global_blocked_locks;
+
+select * from v$sgastat;
+select * from v$parameter;
+
+select * from V$SPPARAMETER;
+
+select * from V$SYSTEM_PARAMETER;
+
+DESC V$PARAMETER
+
+SELECT NAME, VALUE FROM V$PARAMETER WHERE NAME LIKE '%language%'; VER EL LENGUAJE
+
+ALTER SESSION SET NLS_LANGUAGE='SPANISH'; CAMBIAR EL LENGUAJE
+
+ SELECT NAME, VALUE FROM V$SYSTEM_PARAMETER WHERE NAME='processes';
+VER LOS PROCESOS DEFINIDOS
+
+ALTER SYSTEM SET PROCESSES=950 SCOPE=SPFILE; cambiar el numero de processos
+
+
+SELECT NAME, VALUE FROM V$PARAMETER WHERE NAME = 'optimizer_mode';
+
+ver modo de optimizacion
+
+tipos optimizacion
+
+ALTER SYSTEM SET OPTIMIZER_MODE=FIRST_ROWS
+
+ALTER SYSTEM SET OPTIMIZER_MODE=ALL_ROWS
+
+select username, program, command from V$SESSION;
